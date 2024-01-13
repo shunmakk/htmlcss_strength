@@ -1,0 +1,31 @@
+
+/* 1段組みの可変レイアウト */
+
+.container{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #eee;
+}
+
+img{
+    /* 画像のフルードイメージ化 */
+    max-width: 100%;
+    height: auto; /* 画像のアスペクト比を維持するため設定 */
+}
+
+
+/* 多段組の可変レイアウト */
+
+.row{
+    display: flex;
+    justify-content: center;
+    max-width: 640px;
+    margin: 0 auto;
+    outline: 1px dashed  #999;
+
+}
+
+.col2{
+    width: calc((300/640) * 100%); /*46.875%*/
+}
