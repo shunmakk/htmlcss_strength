@@ -19,13 +19,15 @@ img{
 
 .row{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 640px;
     margin: 0 auto;
+    padding: 20px;
     outline: 1px dashed  #999;
 
 }
 
 .col2{
-    width: calc((300/640) * 100%); /*46.875%*/
+    width: calc((290 / 640) * 100%); /*46.875%*/
+    background: #e7e7e7;
 }
