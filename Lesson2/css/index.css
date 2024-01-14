@@ -1,0 +1,38 @@
+/*--モバイルファースト（こちらを推奨）--*/
+
+/* .cardList__item + .cardList__item{
+    margin-top: 30px
+}
+
+@media screen and (min-width: 768px),print{
+    .cardList{
+        display: flex;
+        justify-content: space-between;
+    }
+    .cardList__item{
+        width: calc((100%-60px) /3);
+    }
+    .cardList__item + .cardList__item{
+        margin-top: 0px
+    }
+} */
+
+
+/*--デスクトップファースト--*/
+
+.cardList{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 767px){
+    .cardList{
+        display: block;
+    }
+    .cardList__item{
+        width: auto;
+    }
+    .cardList__item + .cardList__item{
+        margin-top: 30px;
+    }
+}
