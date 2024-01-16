@@ -1,0 +1,52 @@
+/*モバイル1カラム：　pc2カラム*/
+
+.cardList{
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px; /*1行目のmarginを相殺*/
+}
+
+.cardList__item{
+    margin-top: 20px;
+}
+
+@media screen and (min-width:768px),print{
+    .cardList{
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .cardList__item{
+        width: calc((100%-20px)/2);
+    }
+}
+
+
+/*モバイル1カラム：　pc3カラム*/
+@media screen and (min-width:992px),print{
+    .cardList__item{
+        width: calc((100% - 40px) / 3)
+    }
+    .cardList::after{ /*最終行を左積みにする*/
+       content: "";
+       display: block;
+       width: calc((100% - 40px) / 3)
+    }
+}
+
+
+/*モバイル1カラム：　pc4カラム*/
+@media screen and (min-width: 1200px),print{
+    .cardList__item{
+        width: calc((100% - 60px)/ 4);
+    }
+    .cardList::before,
+    .cardList::after{
+        content: "";
+        display: block;
+        width: calc((100% - 60px)/ 4);
+    }
+    .cardList::before{
+        order: 1; /*before擬似要素を末尾に移動*/
+    }
+}
