@@ -8,6 +8,7 @@
 
 .cardList__item{
     margin-top: 20px;
+    background-color: antiquewhite;
 }
 
 @media screen and (min-width:768px),print{
@@ -61,4 +62,83 @@
       margin-top: -20px;
   }
 
-  
+  .cardList__item02{
+      margin-top: 20px;
+      background-color: aquamarine;
+  }
+
+
+/*-- pcレイアウト共通の設定--*/
+@media screen and (min-width: 768px),print {
+    .cardList02{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .cardList__item02{
+        margin-left: 20px;
+    }
+}
+
+/*-- 768px~991pxのみ2カラム--*/
+@media screen and (min-width: 768px) and (max-width: 991px),print{
+ .cardList02{
+     width: calc((100% - 20px) / 2);
+ }
+ .cardList__item02:nth-child(2n+1){
+   margin-left: 0;
+ }
+}
+
+/*-- 992px~1199pxのみ3カラム--*/
+@media screen and (min-width: 992px) and (max-width: 1199px),print{
+    .cardList02{
+        width: calc((100% - 40px) / 3);
+    }
+    .cardList__item02:nth-child(3n+1){
+      margin-left: 0;
+    }
+}
+
+/*-- 1200px以上4カラム--*/
+@media screen and (min-width: 1200px) ,print{
+    .cardList02{
+        width: calc((100% - 60px) / 4);
+    }
+    .cardList__item02:nth-child(4n+1){
+      margin-left: 0;
+    }
+}
+
+
+
+
+
+/*--  display:grid --*/
+
+.cardList03{
+    display: grid;
+    gap: 20px; /*アイテム間の余白を20px*/
+}
+
+.cardList__item03{
+    background: sandybrown;
+}
+
+
+@media screen and (min-width: 768px),print {
+    .cardList03{
+     grid-template-columns: repeat(2,1fr); /*均等2カラム*/
+    }
+}
+
+@media screen and (min-width: 992px),print {
+    .cardList03{
+     grid-template-columns: repeat(3,1fr); /*均等3カラム*/
+    }
+}
+
+@media screen and (min-width: 1200px),print {
+    .cardList03{
+     grid-template-columns: repeat(4,1fr);/*均等4カラム*/
+    }
+}
