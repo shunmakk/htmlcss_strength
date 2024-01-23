@@ -50,3 +50,15 @@
         order: 1; /*before擬似要素を末尾に移動*/
     }
 }
+
+
+
+
+/*--  flex-start　＋ marginでのカードレイアウト --*/
+  .cardList02{
+      display: flex;
+      flex-direction: column;
+      margin-top: -20px;
+  }
+
+  
