@@ -1,0 +1,156 @@
+/* シンプルな横並び  */
+
+.gnav{
+    background: #c8c0c0;
+}
+
+.gnavList{
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-right: 1px solid #ccc;
+    background: darkgray;
+}
+
+
+.gnavList__item{
+    width: 25%;
+    border-left: 1px solid #ccc ;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.gnavList__link{
+    text-decoration: none;
+    color: azure;
+}
+
+
+/* 上下左右中央揃え  */
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background: #509422;
+    margin-bottom: 30px;
+}
+
+.hero__inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.hero__text{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* 均等配置  */
+
+.cardList__item{
+    margin-top: 30px;
+    margin-bottom: 70px;
+    text-align: center;
+    border: 1px solid rgb(165, 165, 165);
+    padding: 10px 10px;
+    text-decoration: underline #509422;
+}
+
+/*for PC*/
+
+@media screen and (min-width: 768px),print{
+    .cardList{
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .cardList._space-between {
+        justify-content: space-between;
+    }
+    .cardList._space-around {
+        justify-content: space-around;
+    }
+    .cardList._space-evenly {
+        justify-content: space-evenly;
+    }
+    .cardList__item{
+        width: calc((100% - 80px) / 3);
+    }
+}
+
+
+
+/* gridの配置  */
+
+/*---------------------------------------
+ gridの配置
+ ----------------------------------------*/
+
+ .container{
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: 50px 1fr auto auto 50px;
+     grid-template-areas: 
+     "header"
+     "main"
+     "lnav"
+     "sidebar"
+     "footer";
+     gap: 20px;
+     max-width: 1000px;
+     min-height: 100vh;
+     margin: 0 auto;
+ }
+
+
+ /* for pc*/
+ @media screen and (min-width: 768px),print{
+     .container{
+         grid-template-columns: 24% 1fr 24%;
+         grid-template-rows: 100px 1fr 100px;
+    
+     grid-template-areas: 
+     "header header header"
+     "lnav main sidebar"
+     "footer footer footer"
+     ;
+    }
+ }
+
+ /*---------------------------------------
+ gridアイテムの設定
+ ----------------------------------------*/
+
+ .header{
+     background: #509422;
+     grid-area: header;
+ }
+
+ .main{
+     background: #e5f3db;
+     grid-area: main;
+ }
+
+ .lnav{
+     background: #aeda90;
+     grid-area: lnav;
+ }
+
+ .sidebar{
+     background: #aeda90;
+     grid-area: sidebar;
+ }
+
+ .footer{
+     background: #509422;
+     grid-area: footer;
+ }
