@@ -1,0 +1,81 @@
+.container{
+	max-width: 1440px;
+	width: 100%;
+}
+
+.alternate{
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.alternate__body{
+	padding: 30px;
+	background: #818458;
+}
+
+.alternate__ttl{
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 0.2em;
+}
+.alternate__txt{
+	margin-top: 20px;
+	line-height: 1.7;
+	text-align: center;
+}
+
+.alternate__thumb img{
+	max-width: none;
+	width: 100%;
+}
+
+/* pc版 */
+@media screen and (min-width: 768px){
+	.alternate{
+		flex-direction: row-reverse;
+	}
+
+	.alternate._reverse{
+		flex-direction: row;
+	}
+
+	.alternate__body{
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.alternate__thumb{
+		width: 50%;
+	}
+
+	.alternate__thumb img{
+		/* テキスト量が増えても問題ないように調整 */
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+
+
+/*ずらし用の指定*/
+@media screen and (max-width: 767px) {
+	.alternate__body {
+		margin-top: -40px; /*テキストボックスを上に40pxずらす*/
+		padding-top: 60px; /*重なり分の上余白を確保*/
+	}
+	/*左右交互に横にずらす*/
+	.alternate._normal .alternate__thumb {
+		margin-left: -20px;
+	}
+	.alternate._normal .alternate__body {
+		margin-right: -20px;
+	}
+	.alternate._reverse .alternate__thumb{
+		margin-right: -20px;
+	}
+	.alternate._reverse .alternate__body{
+		margin-left: -20px;
+	}
+}
